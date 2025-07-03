@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellis Frank- Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-chart-line"></i> Frank Ellis</a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforming Data into <span>Actionable Insights</span></h1>
+                    <p>Hi, I'm Frank. A passionate data analyst specializing in turning complex datasets into meaningful stories that drive business decisions.</p>
+                    <div class="hero-btns">
+                        <a href="#portfolio" class="btn">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&h=400&q=80" alt="Data Visualization">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Data Analyst with a Passion for Insights</h3>
+                    <p>I'm Frank, a data analyst with 1 and half years of experience in transforming raw data into actionable insights. My expertise lies in data cleaning, statistical analysis, and creating compelling visualizations that communicate complex information effectively.</p>
+                    <p>I specialize in Python, SQL, and data visualization tools like Tableau and Power BI. My approach combines technical skills with business acumen to deliver insights that drive strategic decisions.</p>
+                    <p>Whether it's uncovering hidden patterns, predicting trends, or optimizing processes, I thrive on finding solutions through data.</p>
+                    
+                    <h4>Technical Skills</h4>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">SQL</span>
+                     <span class="skill">Tableau</span>
+                        <span class="skill">Power BI</span>
+                        <span class="skill">Excel</span>
+                     <span class="skill">Data Cleaning</span>
+                        <span class="skill">Data Visualization</span>
+                        <span class="skill">Statistical Analysis</span>             
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=500&h=500&q=80" alt="Soni - Data Analyst" style="border-radius: 20px; max-width: 100%; box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="finance">Finance</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="retail">Retail</button>
+                <button class="filter-btn" data-filter="visualization">Visualization</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="finance visualization">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=600&h=300&q=80" alt="Financial Market Analysis">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Financial Market Trend Analysis</h3>
+                        <p>Analysis of stock market trends to identify investment opportunities and risk factors.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Python</span>
+                            <span class="portfolio-tag">Pandas</span>
+                            <span class="portfolio-tag">Tableau</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="healthcare">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&h=300&q=80" alt="Healthcare Analysis">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Patient Readmission Prediction</h3>
+                        <p>Machine learning model to predict patient readmission rates for a hospital network.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Machine Learning</span>
+                            <span class="portfolio-tag">Scikit-learn</span>
+                            <span class="portfolio-tag">SQL</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="retail visualization">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=600&h=300&q=80" alt="Retail Sales Analysis">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Retail Sales Dashboard</h3>
+                        <p>Interactive dashboard for tracking sales performance, inventory, and customer behavior.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Power BI</span>
+                            <span class="portfolio-tag">DAX</span>
+                            <span class="portfolio-tag">SQL</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="finance">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&h=300&q=80" alt="Customer Segmentation">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Customer Segmentation Analysis</h3>
+                        <p>Clustering bank customers to develop targeted marketing strategies.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">K-means Clustering</span>
+                            <span class="portfolio-tag">PCA</span>
+                            <span class="portfolio-tag">Python</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="healthcare visualization">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1581595219318-a9eac5e7c8d1?auto=format&fit=crop&w=600&h=300&q=80" alt="COVID-19 Analysis">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>COVID-19 Impact Analysis</h3>
+                        <p>Visualizing the spread and impact of COVID-19 across different regions.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Tableau</span>
+                            <span class="portfolio-tag">Geospatial</span>
+                            <span class="portfolio-tag">Data Storytelling</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="retail">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=300&q=80" alt="Supply Chain Optimization">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Supply Chain Optimization</h3>
+                        <p>Analysis of logistics data to reduce delivery times and operational costs.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Optimization</span>
+                            <span class="portfolio-tag">Python</span>
+                            <span class="portfolio-tag">Operations Research</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>frankelliskonduah@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Kumasi, Gh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+233 (591) 617-235</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-medium-m"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Frank</h3>
+                    <p>Transforming data into actionable insights that drive business success.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-medium-m"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Data Analysis</a></li>
+                        <li><a href="#">Data Visualization</a></li>
+                        <li><a href="#">Dashboard Development</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Ellis Konduah - Data Analyst Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
