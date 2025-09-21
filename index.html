@@ -3,50 +3,756 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ellis Frank- Data Analyst Portfolio</title>
+    <title>Frank Ellis Konduah - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Your existing styles with some additions for new sections */
+        :root {
+            --primary: #4a6cf7;
+            --secondary: #6f42c1;
+            --dark: #1d2144;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --body-color: #637381;
+            --body-bg: #f5f8ff;
+            --border-color: #e5e7eb;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--body-color);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f5f8ff 0%, #e2e8f0 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--body-color);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: white;
+            color: var(--dark);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .quick-link i {
+            margin-right: 8px;
+        }
+
+        .quick-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 15px;
+            background-color: var(--light);
+            color: var(--dark);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .project-desc {
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            padding: 5px 12px;
+            background-color: var(--light);
+            color: var(--dark);
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .project-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-btn {
+            flex: 1;
+            text-align: center;
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-btn.outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .project-btn:hover {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .project-btn.outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Achievements Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            right: -13px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-item div h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light);
+            color: var(--dark);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content,
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-text, .hero-image,
+            .about-text, .about-image,
+            .contact-info, .contact-form {
+                flex: none;
+                width: 100%;
+            }
+            
+            .hero-image, .about-image {
+                margin-top: 40px;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo"><i class="fas fa-chart-line"></i> Frank Ellis</a>
+                <a href="#" class="logo"><i class=""></i> FRANK ELLIS KONDUAH</a>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Transforming Data into <span>Actionable Insights</span></h1>
-                    <p>Hi, I'm Frank. A passionate data analyst specializing in turning complex datasets into meaningful stories that drive business decisions.</p>
+                    <h1>Developer <strong></strong>& Data Analyst</strong></h1>
+                    <p>A developer and data analyst who builds digital solutions that are not just functional, but insightful. I turn data into engaging user experiences</p>
                     <div class="hero-btns">
-                        <a href="#portfolio" class="btn">View My Work</a>
+                        <a href="#projects" class="btn">View My Work</a>
                         <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                    <div class="quick-links">
+                        <a href="cv.pdf" class="quick-link" target="_blank"><i class="fas fa-file-pdf"></i> Download CV</a>
+                        <a href="https://www.linkedin.com/in/frank-ellis-konduah-9952011ab/" class="quick-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="mailto:your.email@example.com" class="quick-link"><i class="fas fa-envelope"></i> Email Me</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&h=400&q=80" alt="Data Visualization">
+                    <img src="https://images.unsplash.com/photo-1627398284561-1e96720d2940?auto=format&fit=crop&w=600&h=400&q=80" alt="">
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
+    
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
@@ -54,134 +760,187 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Data Analyst with a Passion for Insights</h3>
-                    <p>I'm Frank, a data analyst with 1 and half years of experience in transforming raw data into actionable insights. My expertise lies in data cleaning, statistical analysis, and creating compelling visualizations that communicate complex information effectively.</p>
-                    <p>I specialize in Python, SQL, and data visualization tools like Tableau and Power BI. My approach combines technical skills with business expertise to deliver insights that drive strategic decisions.</p>
-                    <p>I enjoy using data to solve problems, find patterns, predict what might happen next and improve how things are done.</p>
-                    
-                    <h4>Technical Skills</h4>
-                    <div class="skills">
-                        <span class="skill">Python</span>
-                        <span class="skill">SQL</span>
-                     <span class="skill">Tableau</span>
-                        <span class="skill">Power BI</span>
-                        <span class="skill">Excel</span>
-                     <span class="skill">Data Cleaning</span>
-                        <span class="skill">Data Visualization</span>
-                        <span class="skill">Statistical Analysis</span>             
-                    </div>
+                    <h3>Computer Science Graduate & Problem Solver</h3>
+                    <p>I'm a Computer Science graduate with a passion for creating digital solutions that make a difference. My background combines technical expertise with strong customer service experience, allowing me to build applications that truly meet user needs.</p>
+                    <p>I specialize in web development and data analytics, with skills in HTML, CSS, JavaScript, Python, SQL, and various data visualization tools. I enjoy the process of turning complex problems into simple, beautiful solutions.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or hiking outdoors to clear my mind and find inspiration.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=500&h=500&q=80" alt="Soni - Data Analyst" style="border-radius: 20px; max-width: 100%; box-shadow: var(--shadow);">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQF_PauK-jqk3w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688422092452?e=1761177600&v=beta&t=sLljMHYaI_7o6LzqKIwOvvxzaAQMfhHxBoffui5tyGA" alt="Frank - Developer and Analyst" style="border-radius: 20px; max-width: 100%; box-shadow: var(--shadow);">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <section class="skills" id="skills">
         <div class="container">
             <div class="section-title">
-                <h2>My Portfolio</h2>
+                <h2>My Skills</h2>
             </div>
-            
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="finance">Finance</button>
-                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-                <button class="filter-btn" data-filter="retail">Retail</button>
-                <button class="filter-btn" data-filter="visualization">Visualization</button>
-            </div>
-            
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-item" data-category="finance visualization">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=600&h=300&q=80" alt="Financial Market Analysis">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Financial Market Trend Analysis</h3>
-                        <p>Analysis of stock market trends to identify investment opportunities and risk factors.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Python</span>
-                            <span class="portfolio-tag">Pandas</span>
-                            <span class="portfolio-tag">Tableau</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-headset"></i> Customer Service</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Client Communication</span>
+                        <span class="skill-tag">Problem Resolution</span>
+                        <span class="skill-tag">User Support</span>
+                        <span class="skill-tag">Requirement Analysis</span>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="portfolio-item" data-category="healthcare">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&h=300&q=80" alt="Healthcare Analysis">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Patient Readmission Prediction</h3>
-                        <p>Machine learning model to predict patient readmission rates for a hospital network.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Machine Learning</span>
-                            <span class="portfolio-tag">Scikit-learn</span>
-                            <span class="portfolio-tag">SQL</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Data Analytics</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Data Visualization</span>
+                       
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Excel</span>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="portfolio-item" data-category="retail visualization">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=600&h=300&q=80" alt="Retail Sales Analysis">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Retail Sales Dashboard</h3>
-                        <p>Interactive dashboard for tracking sales performance, inventory, and customer behavior.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Power BI</span>
-                            <span class="portfolio-tag">DAX</span>
-                            <span class="portfolio-tag">SQL</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Git/GitHub</span>
                     </div>
                 </div>
                 
-                <!-- Project 4 -->
-                <div class="portfolio-item" data-category="finance">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&h=300&q=80" alt="Customer Segmentation">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Customer Segmentation Analysis</h3>
-                        <p>Clustering bank customers to develop targeted marketing strategies.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">K-means Clustering</span>
-                            <span class="portfolio-tag">PCA</span>
-                            <span class="portfolio-tag">Python</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="portfolio-item" data-category="retail">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=300&q=80" alt="Supply Chain Optimization">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Supply Chain Optimization</h3>
-                        <p>Analysis of logistics data to reduce delivery times and operational costs.</p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Optimization</span>
-                            <span class="portfolio-tag">Python</span>
-                            <span class="portfolio-tag">Operations Research</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">View Project</a>
+                <div class="skill-category">
+                    <h3><i class="fas fa-briefcase"></i> Business Tools</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Slack</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=600&h=300&q=80" alt="Hostel Management System">
+                    </div>
+                    <div class="project-info">
+                        <h3>Hostel Management System</h3>
+                        <div class="project-desc">
+                            <p><strong>Problem:</strong> Manual hostel booking and management processes were time-consuming and error-prone.</p>
+                            <p><strong>Solution:</strong> Developed a comprehensive system to automate bookings, payments, and room allocation.</p>
+                            <p><strong>Result:</strong> Reduced administrative workload by 60% and improved booking accuracy.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-btns">
+                            <a href="#" class="project-btn outline">View Code</a>
+                            <a href="#" class="project-btn">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=600&h=300&q=80" alt="Hostel Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>Hostel Website & Google Business Profile</h3>
+                        <div class="project-desc">
+                            <p><strong>Problem:</strong> The hostel lacked online presence and digital booking capabilities.</p>
+                            <p><strong>Solution:</strong> Created a responsive website with booking functionality and optimized Google Business profile.</p>
+                            <p><strong>Result:</strong> Increased online bookings by 45% and improved local search visibility.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">SEO</span>
+                            <span class="tech-tag">Google Analytics</span>
+                        </div>
+                        <div class="project-btns">
+                            <a href="#" class="project-btn outline">View Code</a>
+                            <a href="#" class="project-btn">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1596466596120-2a8e4b5d1a51?auto=format&fit=crop&w=600&h=300&q=80" alt="Inventory System">
+                    </div>
+                    <div class="project-info">
+                        <h3>Timber & Wood Inventory System</h3>
+                        <div class="project-desc">
+                            <p><strong>Problem:</strong> Manual inventory tracking led to stock discrepancies and inefficiencies.</p>
+                            <p><strong>Solution:</strong> Built a custom inventory management system with barcode scanning capabilities.</p>
+                            <p><strong>Result:</strong> Improved inventory accuracy by 90% and reduced time spent on stock-taking.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-btns">
+                            <a href="#" class="project-btn outline">View Code</a>
+                            <a href="#" class="project-btn">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Achievements</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Booking Efficiency Improvement</h3>
+                        <p>Increased hostel booking efficiency by 60% through the implementation of an automated management system.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Online Presence Enhancement</h3>
+                        <p>Boosted online bookings by 45% by developing a responsive website and optimizing Google Business profile.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3>Inventory Accuracy</h3>
+                        <p>Achieved 90% improvement in inventory accuracy for timber business with custom tracking system.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3>Sales Tracking System</h3>
+                        <p>Developed and implemented a sales tracking dashboard that improved sales monitoring efficiency by 50%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -191,7 +950,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
-                    <p>Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -203,76 +962,62 @@
                         </div>
                         
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fab fa-linkedin"></i>
                             <div>
-                                <h4>Location</h4>
-                                <p>Kumasi, Gh</p>
+                                <h4>LinkedIn</h4>
+                                <p>https://www.linkedin.com/in/frank-ellis-konduah-9952011ab/</p>
                             </div>
                         </div>
                         
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <h4>Phone</h4>
-                                <p>+233 (591) 617-235</p>
+                                <h4>Location</h4>
+                                <p>Dubai</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-medium-m"></i></a>
+                        
                     </div>
                 </div>
                 
                 <div class="contact-form">
-  <form action="https://formspree.io/f/xblybbld" method="POST">
-      <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-      </div>
-      
-      <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-      </div>
-      
-      <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject">
-      </div>
-      
-      <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-      </div>
+                    <form action="https://formspree.io/f/xblybbld" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
 
-      <!-- Optional spam trap -->
-      <input type="text" name="_gotcha" style="display:none">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
 
-      <!-- Optional redirect after submit -->
-      <input type="hidden" name="_next" value="https://ellisfrank.github.io/thank-you.html">
-
-      <button type="submit" class="btn">Send Message</button>
-  </form>
-</div>
-
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>Frank</h3>
-                    <p>Transforming data into actionable insights that drive business success.</p>
+                    <p>Bridging the gap between people, business, and technology.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-medium-m"></i></a>
+                        
                     </div>
                 </div>
                 
@@ -281,26 +1026,43 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Services</h3>
+                    <h3>My Services</h3>
                     <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
                         <li><a href="#">Data Analysis</a></li>
-                        <li><a href="#">Data Visualization</a></li>
-                        <li><a href="#">Dashboard Development</a></li>
+                        <li><a href="#">Business Solutions</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Ellis Konduah - Data Analyst Portfolio. All rights reserved.</p>
+                <p>&copy; 2025 Frrank Ellis Konduah - Developer & Data Analyst Portfolio. All rights reserved.</p>
             </div>
         </div>
     </footer>
-<script src="assets/js/main.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
